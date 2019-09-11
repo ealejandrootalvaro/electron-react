@@ -1,0 +1,88 @@
+{
+  "name": "my-new-app",
+  "productName": "my-new-app",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": ".webpack/main",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": "Edwin Otalvaro",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "my_new_app"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "plugins": [
+        [
+          "@electron-forge/plugin-webpack",
+          {
+            "mainConfig": "./webpack.main.config.js",
+            "renderer": {
+              "config": "./webpack.renderer.config.js",
+              "entryPoints": [
+                {
+                  "html": "./src/index.html",
+                  "js": "./src/App.tsx",
+                  "name": "main_window"
+                }
+              ]
+            }
+          }
+        ]
+      ]
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.4.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.45",
+    "@electron-forge/maker-deb": "^6.0.0-beta.45",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.45",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.45",
+    "@electron-forge/maker-zip": "^6.0.0-beta.45",
+    "@electron-forge/plugin-webpack": "^6.0.0-beta.45",
+    "@marshallofsound/webpack-asset-relocator-loader": "^0.5.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^4.3.5",
+    "css-loader": "^3.2.0",
+    "electron": "6.0.7",
+    "fork-ts-checker-webpack-plugin": "^1.5.0",
+    "node-loader": "^0.6.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.6.2"
+  }
+}
