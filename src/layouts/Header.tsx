@@ -17,6 +17,9 @@ const Header = () => (
                 <Button color="inherit">
                     <MenuItem component={Link} to={"/tasks"} >Tasks</MenuItem>
                 </Button>
+                <Button color="inherit">
+                    <MenuItem component={Link} to={"/flujos"} >Flujos</MenuItem>
+                </Button>
             </Toolbar>
         </AppBar>
     </div>
