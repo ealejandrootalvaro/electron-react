@@ -77,12 +77,12 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^4.3.5",
-    "css-loader": "^3.2.0",
+    "css-loader": "^6.7.3",
     "electron": "6.0.7",
     "fork-ts-checker-webpack-plugin": "^1.5.0",
     "node-loader": "^0.6.0",
-    "style-loader": "^0.23.1",
-    "ts-loader": "^6.0.4",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
     "typescript": "^3.6.2"
   }
 }
